@@ -14,3 +14,4 @@
 9. [Ansible](questions/ansible.md)
 10. [Kubernetes / Openshift](questions/kubernetes.md)
 11. [Тестовые практические задания](questions/practice.md)
+12. [Мои вопросы!](questions/myquestions.md)
