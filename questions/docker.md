@@ -414,7 +414,11 @@ curl 127.0.0.1:8080
 </b></details>
 
 
+<details>
+<summary>Как посмотреть логи в уже работающем контейнере</summary><br><b>
 
+docker logs <container_id>
+</b></details>
 
 ### Docker Architecture
 
