@@ -307,6 +307,108 @@ You should choose VMs when:
 </b></details>
 
 
+<a name="questions-common-commands"></a>
+### Commands Commands
+
+
+<details>
+<summary>Как запустить контейнер?</summary><br><b>
+
+`docker run ubuntu`
+</b></details>
+
+<details>
+<summary>Почему после запуска <code>podman container run ubuntu</code> вывод <code>podman container ls</code> is empty?</summary><br><b>
+
+Потому что контейнер немедленно завершает работу после запуска образа ubuntu. Это совершенно нормально и ожидаемо, поскольку контейнеры предназначены для запуска службы или приложения и завершают работу, когда они завершат ее запуск. Чтобы увидеть контейнер, вы можете запустить `podman ps -a`
+
+Если вы хотите, чтобы контейнер продолжал работать, вы можете запустить команду типа "sleep 100", которая будет выполняться в течение 100 секунд, или вы можете подключиться к терминалу контейнера с помощью аналогичной команды: `podman container run -it ubuntu /bin/bash`.
+</b></details>
+
+<details>
+<summary>Как вывести список всех контейнеров на локальном хосте?</summary><br><b>
+
+`docker container ls`
+</b></details>
+
+<details>
+<summary>Как подключить вашу оболочку к терминалу запущенного контейнера?</summary><br><b>
+
+`docker container exec -it [container id/name] bash`
+
+Это можно сделать заранее при запуске контейнера:  `podman container run -it [image:tag] /bin/bash`
+</b></details>
+
+<details>
+<summary>Истинно или ложно? Вы можете удалить запущенный контейнер, если в нем ничего не запущено</summary><br><b>
+
+Ложный. Вы должны остановить контейнер, прежде чем удалить его.
+</b></details>
+
+<details>
+<summary>Как остановить и удалить контейнер?</summary><br><b>
+
+`docker container stop <container id/name> && docker container rm <container id/name>`
+</b></details>
+
+<details>
+<summary>Что происходит, когда вы запускаете <код>docker container под управлением ubuntu</code>?</summary><br><b>
+
+1. Клиент Docker отправляет команду на сервер API, работающий как часть демона Docker
+2. Демон Docker проверяет, существует ли локальный образ
+1. Если он существует, он будет его использовать
+2. Если не существует, он перейдет в удаленный реестр (по умолчанию Docker Hub) и извлекет образ локально
+3. containerd и runc получают инструкции (от демона) о создании и запуске контейнера
+</b></details>
+
+<details>
+<summary>Как запустить контейнер в фоновом режиме?</summary><br><b>
+
+С флагом -d. Он будет запущен в фоновом режиме и не будет подключен к терминалу.
+
+`docker container run -d httpd` or `podman container run -d httpd`
+</b></details>
+
+<details>
+<summary>If you'll run <code>sleep 100</code> inside a container, will you see it when listing all the processes of the host on which the container runs? Why?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? If image <code>httpd-service</code> has an entry point for running the httpd service then, the following will run the container and eventually the httpd service <code>podman run httpd-service ls</code></summary><br><b>
+
+False. Running that command will override the entry point so the httpd service won't run and instead podman will run the `ls` command.
+</b></details>
+
+<details>
+<summary>True or False? Running <code>podman restart CONTAINER_NAME</code> kills the main process inside the container and runs it again from scratch</summary><br><b>
+
+False. `podman restart` creates an entirely new container with the same ID while reusing the filesystem and state of the original container.
+</b></details>
+
+<details>
+<summary>You would like to run a web server inside a container but, be able to access it from the localhost. Demonstrate how to do that</summary><br><b>
+
+```
+podman run -d --name apache1 -p 8080:8080 registry.redhat.io/rhel8/httpd-24
+curl 127.0.0.1:8080
+```
+</b></details>
+
+<details>
+<summary>После запуска контейнера он остановился. <код>podman ps</code> ничего не показывает. Как вы можете показать его детали?</summary><br><b>
+
+`podman ps -a` также покажет подробную информацию о остановленном контейнере.
+</b></details>
+
+<details>
+<summary>How to list all the image tags for a given container image?</summary><br><b>
+
+`podman search --list-tags IMAGE_NAME`
+</b></details>
+
+
+
+
 ### Docker Architecture
 
 <details>
