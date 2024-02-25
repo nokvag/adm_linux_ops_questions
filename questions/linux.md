@@ -271,12 +271,6 @@ cmd 2>&1 >/dev/null | grep pattern
 
 </details>
 
-```
-mkdir /tmp/abc
-cd /tmp/abc
-ls >a 2>b
-cat a
-```
 
 <details>
   <summary>Что выведет команда `cat a` и почему?</summary>
@@ -290,6 +284,13 @@ b
 
 </details>
 
+
+```
+mkdir /tmp/abc
+cd /tmp/abc
+ls >a 2>b
+cat a
+```
 
 
 <details>
