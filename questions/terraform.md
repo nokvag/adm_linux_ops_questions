@@ -1,27 +1,26 @@
 ## Terraform
 
-1. Что содержит код Terraform?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что содержит код Terraform?</summary>
 
 Ресурсы облачного провайдера, а также провижининг для создаваемых ресурсов.
 
 </details>
 
-2. Как хранить состояние инфраструктуры в Terraform?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как хранить состояние инфраструктуры в Terraform?</summary>
 
 Например, можно хранить tfstate в git-репозитории команды. Другой вариант - хранить в специализированном Terraform Backend.
 
 </details>
 
-3. Terraform Backend. Какой лучше?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Terraform Backend. Какой лучше?</summary>
 
 Зависит от требованиям к хранению состояния.
 
@@ -41,10 +40,10 @@
 
 </details>
 
-4. Как добавить имеющиеся ресурсы в tfstate?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как добавить имеющиеся ресурсы в tfstate?</summary>
 
 ```
 terraform import [options] ADDRESS ID
@@ -74,37 +73,37 @@ terraform import aws_s3_bucket.sample_bucket tyx-local-bucket
 
 </details>
 
-5. Зачем нужен `terraform taint`?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Зачем нужен `terraform taint`?</summary>
 
 Команда `terraform taint` пометит ресурс инфраструктуры, который будет удален и заново создан при следующем применении команды `terraform apply`. 
 
 </details>
 
-6. Как проводить тестирование terraform?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как проводить тестирование terraform?</summary>
 
 `terraforn plan` выполнит проверку действующего кода. Работу с облачными ресурсами выполнит 
 
 </details>
 
-7. Что такое модуль в terraform? Для чего он нужен?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что такое модуль в terraform? Для чего он нужен?</summary>
 
 Модуль в Terraform - пакет конфигурации Terraform, который можно использовать при повторной конфигурации компонентов инфраструктуры, а также базовой организации кода Terraform в директориях. При подключения модуля, ему даётся имя.
 
 </details>
 
-8. Как хранить переменные в terraform?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как хранить переменные в terraform?</summary>
 
 *main.tf* - основной конфигурационный файл, описывающий какие инстансы необходимо создать.
 *variables.tf* - конфигурация с описанием переменных и значениями по-умолчанию. Если значения по-умолчанию не задано, то они являются обязательными.
@@ -113,10 +112,10 @@ terraform import aws_s3_bucket.sample_bucket tyx-local-bucket
 
 </details>
 
-9. Как конвертировать Kubernetes yaml-манифест в HCL средствами Linux и terraform?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как конвертировать Kubernetes yaml-манифест в HCL средствами Linux и terraform?</summary>
 
 Например:
 ```
@@ -125,28 +124,28 @@ echo 'yamldecode(file("filename.yaml"))' | terraform console
 
 </details>
 
-10. Что такое Workspaces в Terraform?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что такое Workspaces в Terraform?</summary>
 
 [Workspaces](https://developer.hashicorp.com/terraform/language/state/workspaces#using-workspaces) в Terraform - это возможность управления state файлами. Workspace содержит все что необходимо для управления набором инфраструктуры, а отдельные рабочие области функционируют как полностью отдельные рабочие каталоги. С помощью Workspaces возможно управлять несколькими средами инфраструктуры.
 
 </details>
 
-11. Для чего нужен terragrunt?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Для чего нужен terragrunt?</summary>
 
 Terragrunt — это обертка для Terraform, позволяющая решать проблемы, связанные с масштабированием и переиспользованием кода для настройки инфраструктуры. Он позволяет повторно использовать конфигурационные параметры и поддерживает многоуровневые конфигурации и зависимости.
 
 </details>
 
-12. Чем отличается `count` от `for_each`?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Чем отличается `count` от `for_each`?</summary>
 
 `count` — это итерация по списку, который содержит целочисленные элементы, `for_each` — это итерация по корневым ключам словаря, которые могут содержать данные любого типа.
 
