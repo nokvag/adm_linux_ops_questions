@@ -221,7 +221,6 @@ round-trip min/avg/max = 15.814/22.208/31.412 ms
 
 </details>
 
-7. 
 
 <details>
   <summary>Что такое эфемерные контейнеры?</summary>
