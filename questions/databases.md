@@ -1,7 +1,7 @@
-1. Как настроить master-slave репликацию в mysql (кратко)?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Как настроить master-slave репликацию в mysql (кратко)?</summary>
 
 Необходимы 2 сервера: master и slave.
 
@@ -59,19 +59,17 @@ SHOW SLAVE STATUSG
 
 </details>
 
-2. Какой тип базы данных использует Prometheus?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Какой тип базы данных использует Prometheus?</summary>
 
 Prometheus использует TSDB (time series database).
 
 </details>
 
-3. Что такое VACUUM в PostgreSQL?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что такое VACUUM в PostgreSQL?</summary>
 
 VACUUM высвобождает пространство, занимаемое «мёртвыми» кортежами. При обычных операциях PostgreSQL кортежи, удалённые или устаревшие в результате обновления, физически не удаляются из таблицы; они сохраняются в ней, пока не будет выполнена команда VACUUM. Таким образом, периодически необходимо выполнять VACUUM, особенно для часто изменяемых таблиц.
 
