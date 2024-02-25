@@ -1,9 +1,8 @@
 ## CI / CD
 
-1. Чем отличается Continuous Integration от Continuous Delivery от Continuous Deployment?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Чем отличается Continuous Integration от Continuous Delivery от Continuous Deployment?</summary>
 
 Continuous Integration (непрерывная интеграция) - практика интеграции изменений кода из ветки разработки в основную ветку путём инструментов для интеграции.
 
@@ -26,28 +25,26 @@ Continuous Deployment (непрерывное разворачивание) - п
 
 </details>
 
-2. Что означает конструкция `when: always` в stage блоке в gitlab CI?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что означает конструкция `when: always` в stage блоке в gitlab CI?</summary>
 
 Данная конструкция означает, что stage будет запущен вне зависимости от успешности предыдущего шага.
 
 </details>
 
-3. Что выполняет конструкция `extends: .plan` в gitlab CI?
+
 
 <details>
-  <summary>Ответ</summary>
+  <summary>Что выполняет конструкция `extends: .plan` в gitlab CI?</summary>
 
 `extends` используется для повторного использования секции пайплайна (аналог фунции). `.plan` указывает на имя повторяемой секции в пайплайне. Первым в шаге выполняется скрипт из `extends`.
 
 </details>
 
-4. В gitlab CI необходимо, чтобы джоба выполнялась всегда только при ручной активации. Что для этого необходимо сделать?
 
 <details>
-  <summary>Ответ</summary>
+  <summary>В gitlab CI необходимо, чтобы джоба выполнялась всегда только при ручной активации. Что для этого необходимо сделать?</summary>
 
 Необходимо добавить `when: manual` в описание заданной джобы. По-умолчанию при использовании `when: manual` параметр `allow_failure` установлен в `true`, поэтому данная джоба будет запускаться автоматически. Чтобы такого не было необходимо также установить параметр `allow_failure: false`.
 
