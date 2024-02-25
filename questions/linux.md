@@ -271,7 +271,6 @@ cmd 2>&1 >/dev/null | grep pattern
 
 </details>
 
-25. 
 ```
 mkdir /tmp/abc
 cd /tmp/abc
@@ -355,7 +354,7 @@ kill(1111, SIGTERM);
 
 </details>
 
-29. 
+
 
 <details>
   <summary>Что такое inode? Какая информация там хранится?</summary>
