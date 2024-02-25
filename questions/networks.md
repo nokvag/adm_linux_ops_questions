@@ -273,4 +273,23 @@ Round-robin DNS работает, отвечая на запросы не тол
 
 </details>
 
+<details>
+<summary>Какие порты используют следующие протоколы по дефолту?:
 
+  * SSH
+  * SMTP
+  * HTTP
+  * DNS
+  * HTTPS
+  * FTP
+  * SFTP
+</summary><br><b>
+
+  * SSH - 22
+  * SMTP - 25
+  * HTTP - 80
+  * DNS - 53
+  * HTTPS - 443
+  * FTP - 21
+  * SFTP - 22
+</b></details>
